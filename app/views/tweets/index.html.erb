@@ -1,0 +1,15 @@
+<div class="jumbotron text-center">
+	<h1>All Tweets</h1>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-sm-3"></div>
+			<ul class="col-sm-6 list-group">
+				<% @tweets.each do |t| %>
+						<li class="list-group-item"><%= t.tweet %></li>
+				<% end %>
+			</ul>
+		<div class="col-sm-3"></div>
+	</div>
+</div>
