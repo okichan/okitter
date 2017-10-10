@@ -9,10 +9,12 @@
   </head>
 
   <body>
+  <div class="container">
+    <%# render 'tweets/header' %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%# render 'tweets/header' %>
     <%= yield %>
-    <%= render 'tweets/footer' %>
+    <%= render 'layouts/footer' %>
+  </div>
   </body>
 </html>

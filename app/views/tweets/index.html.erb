@@ -1,15 +1,24 @@
 <div class="jumbotron text-center">
 	<h1>All Tweets</h1>
+
+	<%= form_for :post, url: tweets_path do |f| %>
+		<p>
+		<%= f.text_field :tweet %>
+		</p>
+		<p><%= f.submit %></p>
+	<% end %>
 </div>
 
-<div class="container">
 	<div class="row">
 		<div class="col-sm-3"></div>
 			<ul class="col-sm-6 list-group">
 				<% @tweets.each do |t| %>
-						<li class="list-group-item"><%= t.tweet %></li>
+						<li class="list-group-item">
+							<p><%= t.tweet %></p>
+							<span><%= t.user.profile.nickname %></span> | 
+							<span><%= t.created_at %></span>
+						</li>
 				<% end %>
 			</ul>
 		<div class="col-sm-3"></div>
 	</div>
-</div>

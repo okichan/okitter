@@ -8,3 +8,4 @@
 15.times do |i|
     Tweet.create(tweet: "this is tweet #{i}")
 end
+
