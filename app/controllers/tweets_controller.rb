@@ -2,7 +2,7 @@ class TweetsController < ApplicationController
   before_action :authenticate_user!
   def index
     @tweets = Tweet.all.order('created_at DESC')
-    @nickname = current_user.profile.nickname
+    @profile = current_user.profile
   end
 
   def new
@@ -15,17 +15,17 @@ class TweetsController < ApplicationController
     @tweet = Tweet.new(params.require(:post).permit(:tweet))
     @tweet.user = current_user
 
-    # respond_to do |format|
+    respond_to do |format|
       if @tweet.save
-        redirect_to tweets_path
-        # format.html { redirect_to tweets_path, notice: 'Photo was successfully created.' }
-        # format.json { render :index, status: :created, location: @tweet }
+        # redirect_to tweets_path
+        format.html { redirect_to tweets_path, notice: 'Tweeted.' }
+        format.json { render :index, status: :created, location: @tweet }
       else
-        render plain: @tweet.errors.inspect
-        # format.html { render :new }
-        # format.json { render json: @tweet.errors, status: :unprocessable_entity }
+        # render plain: @tweet.errors.inspect
+        format.html { render :index }
+        format.json { render json: @tweet.errors, status: :unprocessable_entity }
       end
-    # end
+    end
 =begin    
     if @tweet.save
         # redirect
