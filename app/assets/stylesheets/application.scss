@@ -2,12 +2,17 @@
 
 
 .footer {
+    position: fixed;
     bottom: 0;
-    width: 100%;
+    left: 0;
+    width: 100vw;
     /* Set the fixed height of the footer here */
-    height: 40px;
-    line-height: 20px; /* Vertically center the text there */
-    background-color: white;
+    height: 30px;
+    background-color: #F0F0F0;
+    a {
+      // margin: 20px;
+      line-height: 3px; /* Vertically center the text there */
+    }
   }
 
   .tweet-footer {

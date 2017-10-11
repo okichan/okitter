@@ -7,7 +7,7 @@
 
     <% if @user.present? %>
         <br><br>
-        <span><%= link_to 'Go and tweet now', tweets_path %></span>
+        <span>Hello <%= link_to @user.username, tweets_path %>.</span>
     <% end %>
 </div>
 

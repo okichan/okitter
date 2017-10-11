@@ -7,7 +7,8 @@ end
 
 gem 'bootstrap', '~> 4.0.0.beta'
 gem 'devise'
-gem 'bcrypt', platforms: :ruby
+# gem 'bcrypt', platforms: :ruby
+gem 'bcrypt-ruby', '3.1.1.rc1', :require => 'bcrypt'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'

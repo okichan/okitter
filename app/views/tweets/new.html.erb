@@ -1,2 +1,12 @@
-<h1>Tweets#new</h1>
-<p>Find me in app/views/tweets/new.html.erb</p>
+<h2>Add new post</h2>
+<%= form_for :post, url: tweets_path do |f| %>
+    
+    <p>
+    <%= f.text_field :tweet, placeholder: 'enter title' %>
+    <% if @tweet.errors.messages[:tweet].any? %>
+        <span class="error"><%= @tweet.errors.messages[:tweet][0] %></span>
+    <% end %>
+    </p>
+
+    <p><%= f.submit %></p>
+<% end %>

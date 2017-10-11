@@ -1,5 +1,6 @@
 
 <div class="jumbotron text-center">
+
 	<h1>What's happening? </h1>
 
 	<%= form_for :post, url: tweets_path do |f| %>
@@ -15,8 +16,10 @@
 		<div class="card" style="width: 100%; padding: 12px;">
 			<img class="card-img-top" src="http://www.cinemacafe.net/imgs/thumb_h1/3469.jpg" alt="Card image cap">
 			<div class="card-block">
-				<h4 class="card-title"><%= @profile.nickname %></h4>
-				<p class="card-text"> <%= @profile.bio %> </p>
+				<h4 class="card-title"><%= @user.try(:username) %></h4>
+				<p class="card-text"> 
+				<%= @user.profile.try(:bio) %>
+				</p>
 			</div>
 		</div>
 			
@@ -26,7 +29,7 @@
 						<li class="list-group-item">
 							<p><%= t.tweet %></p>
 							<div class="tweet-footer">
-								<span ><%= t.user.profile.nickname %></span> | 
+								<span ><%= t.user.username %></span> | 
 								<span><%= t.created_at.in_time_zone("Melbourne").strftime('%A %d %b %Y %H:%M') %></span>
 							</div>
 						</li>
