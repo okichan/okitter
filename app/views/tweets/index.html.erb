@@ -3,18 +3,17 @@
 
 	<h1>What's happening? </h1>
 
-	<%= form_for :post, url: tweets_path do |f| %>
-		<p>
-		<%= f.text_area :tweet, style: "width: 600px;" %>
-		</p>
+	<%= form_with scope: :post, url: tweets_path do |f| %>
+		<%= f.text_field :tweet, style: "width: 600px; margin: 30px;" %>
 		<p><%= f.submit "tweet", class: "btn btn-primary" %></p>
 	<% end %>
+
 </div>
 
 	<div class="row">
 		<div class="col-sm-3">
 		<div class="card" style="width: 100%; padding: 12px;">
-			<img class="card-img-top" src="http://www.cinemacafe.net/imgs/thumb_h1/3469.jpg" alt="Card image cap">
+			<img class="card-img-top" src="http://i1.kym-cdn.com/photos/images/newsfeed/000/415/209/3b4.png" alt="Card image cap">
 			<div class="card-block">
 				<h4 class="card-title"><%= @user.try(:username) %></h4>
 				<p class="card-text"> 
