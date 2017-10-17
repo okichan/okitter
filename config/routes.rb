@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   root 'landing#index'
   get 'landing/index'
   resources :tweets
-
+  resource :profile
 end
